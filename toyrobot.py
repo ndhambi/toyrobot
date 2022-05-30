@@ -11,7 +11,8 @@ class toyRobot:
     errorStatusMessage=''
 
 
-    rows,cols =(6,6) #tabele dimensions will have 6 instead of 5 due to the fact that a cartesean plane for any  distance starts from 0,0
+    rows,cols =(6,6) #table dimensions array will have length 6 instead of 5 due to the fact that a cartesean plane for any  distance starts from 0,0. Each array elemnt represent a point in the cartesean plane
+
     table=[[0]*cols]*rows
 
     robot = robotPosition()
