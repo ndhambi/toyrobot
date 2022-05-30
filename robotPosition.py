@@ -4,6 +4,7 @@ class robotPosition:
     bearing=0
     setFlag=False
     
+    
     def setXPosition(self,x):
         self.x=x
     def setYPosition(self,y):
