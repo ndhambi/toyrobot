@@ -1,4 +1,4 @@
-from numpy import False_
+#from numpy import False_
 from robotPosition import robotPosition
 
 class toyRobot:
@@ -50,7 +50,7 @@ class toyRobot:
                         self.yPlace= commandArray[1]
                         
                         
-                        if(self.validateBearing(commandArray)):
+                        if(self.validateBearing(commandArray[2])):
                             self.bearingPlace= commandArray[2]
                             return True
                         else:
@@ -73,10 +73,10 @@ class toyRobot:
                     
 
 
-    def validateBearing(self,commandArray):
+    def validateBearing(self,bearingParam):
         
         try:
-            arrayIndex= self.bearings.index(commandArray[2])
+            arrayIndex= self.bearings.index(bearingParam)
             return True
         except ValueError:
             return False

@@ -1,7 +1,7 @@
 import unittest
 from unittest import result
 
-from numpy import True_
+
 import toyrobot
 
 class TestRobot(unittest.TestCase):
@@ -23,6 +23,16 @@ class TestRobot(unittest.TestCase):
         self.assertEqual(self.robot.validateBoundaries(-1,0),False)
         self.assertEqual(self.robot.validateBoundaries(0,-1),False)
         self.assertEqual(self.robot.validateBoundaries(-5,-5),False)
+
+
+    def test_validateBearing(self):
+        self.assertEqual(self.robot.validateBearing("NORTH"),True)
+        self.assertEqual(self.robot.validateBearing("WEST"),True)
+        self.assertEqual(self.robot.validateBearing("SOUTH"),True)
+        self.assertEqual(self.robot.validateBearing("EAST"),True)
+        self.assertEqual(self.robot.validateBearing("ESTTTTT"),False)
+        self.assertEqual(self.robot.validateBearing("TEST"),False)
+        self.assertEqual(self.robot.validateBearing("123456"),False)
         
 
 
@@ -47,7 +57,7 @@ class TestRobot(unittest.TestCase):
         self.assertEqual(self.robot.changeBearing("Up"),True)
         self.assertEqual(self.robot.changeBearing("Down"),True)
 
-    def test_fullRobotMoveCommand(self):
+    def test_fullRobotCommand(self):
         self.assertEqual(self.robot.executeCommand("PLACE 1,1,NORTH"),True)
         self.assertEqual(self.robot.executeCommand("REPORT"),True)
         self.assertEqual(self.robot.executeCommand("MOVE"),True)
