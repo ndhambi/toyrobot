@@ -32,7 +32,7 @@ $ docker run -it --name toyrobot toyrobot
 
  
 
-## How To Use
+## How To Use?
 ***
 3.1. The container will launch in a command line to prompt user to enter commnands:
 ```
